@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "SmsRaw = fread(file.choose())\nglimpse(SmsRaw)\nSmsRaw = SmsRaw %>% mutate(type = as.factor(type))\nsmscorpus = VCorpus(VectorSource(SmsRaw$text))\nsmsTestCorpus = VCorpus(VectorSource(SmsRaw$text[nrow(SmsRaw)]))\ntextMatrix = DocumentTermMatrix(smscorpus,list(removePunctuation = T,stopwords = TRUE,\n                                               stemming = TRUE,\n                                               removeNumbers = TRUE\n                                               \n)\n)",
+    "created" : 1511365979734.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3671557760",
+    "id" : "FB488E04",
+    "lastKnownWriteTime" : 31244048835477601,
+    "last_content_update" : 1511365982860,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\nlibrary(dplyr)\nlibrary(janeaustenr)\n\nbook_words <- austen_books() %>%\n  unnest_tokens(word, text) %>%\n  count(book, word, sort = TRUE) %>%\n  ungroup()\n\ntrainWords <- trainOrig %>%\n  unnest_tokens(word, text) %>%\n  count(author, word, sort = TRUE) %>%\n  ungroup()\n\n\nlibrary(leaflet)\nm = leaflet() %>% addTiles()\ndf = data.frame(\n  lat = rnorm(100),\n  lng = rnorm(100),\n  size = runif(100, 5, 20),\n  color = sample(colors(), 100)\n)\nm = leaflet(df) %>% addTiles()\nm %>% addCircleMarkers(radius = ~size, color = ~color, fill = TRUE)\nm %>% addCircleMarkers(radius = runif(100, 4, 10), label = c(\"hi\"),color = c('red'))\n?addCircles\n",
+    "created" : 1510073940495.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4094763142",
+    "id" : "1A9B049E",
+    "lastKnownWriteTime" : 1510283159,
+    "last_content_update" : 1510283159745,
+    "path" : "M:/Data analytics/My R Projects/Kaggle_SpookyAuthor/leaflet test.R",
+    "project_path" : "leaflet test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
